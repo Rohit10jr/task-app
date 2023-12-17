@@ -1,0 +1,20 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block content%}
+
+{% for group in request.user.groups.all %}
+    {% if group.name == 'user' %}
+    <div class="container" id="container1">
+        <h1>User Details</h1>
+        <p>User Name: {{ username }}</p>
+        <p>First Name: {{ firstname }}</p>
+        <p>Last Name: {{ lastname }}</p>
+        <p>Email: {{ email }}</p>
+    </div>
+    {% endif %}
+{% endfor %}
+
+{% endblock content%}
+
+        
+    

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conditional Submit</title>
+</head>
+<body>
+
+<!-- Your form with conditional submit button -->
+<form id="myForm">
+    <label for="field1">Field 1:</label>
+    <input type="text" id="field1" name="field1" required>
+    <br>
+
+    <label for="field2">Field 2:</label>
+    <input type="text" id="field2" name="field2" required>
+    <br>
+
+    <label for="field3">Field 3:</label>
+    <input type="text" id="field3" name="field3" required>
+    <br>
+
+    <label for="field4">Field 4:</label>
+    <input type="text" id="field4" name="field4" required>
+    <br>
+
+    <button type="button" id="submitButton" style="display: none">Submit</button>
+</form>
+
+<!-- Script to check if all fields are filled before showing the submit button -->
+<script>
+    const form = document.getElementById('myForm');
+    const submitButton = document.getElementById('submitButton');
+
+    form.addEventListener('input', () => {
+        // Check if all fields are filled
+        const allFieldsFilled = Array.from(form.elements).every(element => {
+            return element.type !== 'text' || (element.type === 'text' && element.value.trim() !== '');
+        });
+
+        // Show or hide the submit button based on the condition
+        submitButton.style.display = allFieldsFilled ? 'inline-block' : 'none';
+    });
+</script>
+
+</body>
+</html>

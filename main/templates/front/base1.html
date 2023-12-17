@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Styled HTML Page</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: rgba(240, 244, 247, 255);
+            /* overflow: hidden; */
+            /* display: flex; */
+        }
+
+        .centered-div {
+            margin: 15px 10px;
+            border-radius: 50px; 
+            height: 91vh;
+            background-color: white;
+            
+    
+        }
+        .first {
+            position: relative;
+            width: 100%;
+            height: 25px;
+            border-radius: 5px 5px 0px 0px; 
+            background-color: #9eadba;
+        }
+
+        .first::before,
+        .first::after,
+        .second::before {
+            content: "";
+            position: absolute;
+            top: 5px;
+            width: 15px;
+            height: 15px;
+            background-color: #8f9eac;
+            border-radius: 50%;
+        }
+
+        .first::before {
+            left: 5px;
+        }
+
+        .first::after {
+            left: 25px; /* Adjust the distance between circles */
+        }
+        
+        .second::before {
+            margin-top:16px;
+            left: 55px; /* Adjust the distance between circles */
+        }
+
+        .second{
+            width: 100%;
+            height: 40px;
+            background-color: white ;
+        }
+        .third{
+            width: 100%;
+            height: 50px;
+            background-color: #dfe6ed ;
+        }
+        .main-container{
+            display: flex;
+            width: 100%;
+            height:88%;
+            background-color: #dfe6ed ;
+            border-radius: 0px 0px 5px 5px; 
+            /* height: 90%; */
+        }
+        
+        .navbar{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 220px;
+            background-color:  #dfe6ed;
+            /* height: 87%; */
+            /* padding-top: 20px; */
+            /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+            /* color: #fff; */
+            
+        }
+        
+
+         .navbar a {
+            width:50%;
+            height: 5%;
+            text-align: center;
+            vertical-align: text-bottom;
+            margin-bottom: 15px;
+            display: inline-block;
+            padding: 8px 16px;
+            background-color: white;
+            color: #6558f5;
+            border: 1px solid #6558f5; 
+            text-decoration: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .navbar-link:hover {
+            background-color: #6558f5;
+            color: white;
+        }
+
+        .content-wrapper {
+            flex: 1;
+            flex-wrap: wrap;
+            display: flex;
+            overflow-y: auto;
+            height:80vh;
+            /* overflow-y: scroll; */
+            /* overflow: hidden; */
+            background-color: white;
+            /* display: flex;  */
+            /* Hide overflow to prevent body scroll */
+        }
+
+        .content {
+            flex: 1;
+            padding: 30px;
+            padding-right: 15px;
+            padding-left: 15px;
+            overflow-y: auto;
+            border: 3px solid #c3cfd9; /* Enable vertical scroll for the content div */
+        }
+
+        /* Container Styles */
+        .container {
+            margin-bottom: 30px;
+            padding: 20px;
+            background-color: #dfe6ed;
+            border: 3px solid #9eadba;
+            border-radius: 5px;
+        }
+    </style>
+    </style>
+</head>
+<body>
+    <!-- <div> -->
+    <div class="centered-div">
+        <p></p>
+        <div class="first">
+
+        </div>
+        <div class="second">
+        </div>
+        <div class="third">
+        </div>
+        <div class="main-container">
+            <div class="navbar">
+                <a href="#" class="navbar-link">Button 1</a>
+                <a href="#" class="navbar-link">Button 2</a>
+                <a href="#" class="navbar-link">Button 3</a>
+                <a href="#" class="navbar-link">Button 4</a>
+                <a href="#" class="navbar-link">Button 5</a>
+            </div>
+            <div class="content-wrapper">
+                <div class="content">
+                    <!-- Container 1 -->
+                    <div class="container" id="container1">
+                        <h2>Container 1</h2>
+                        <p>Content for Container 1 goes here.</p>
+                    </div>
+        
+                    <!-- Container 2 -->
+                    <div class="container" id="container2">
+                        <h2>Container 2</h2>
+                        <p>Content for Container 2 goes here.</p>
+                    </div>
+        
+                    <!-- Container 3 -->
+                    <div class="container" id="container3">
+                        <h2>Container 3</h2>
+                        <p>Content for Container 3 goes here.</p>
+                    </div>
+                    
+                    <div
+                    class="container" id="container4">
+                        <h2>Container 4</h2>
+                        <p>Content for Container 4 goes here.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- </div> -->
+</body>
+</html>

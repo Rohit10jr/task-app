@@ -1,0 +1,17 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block content%}
+
+<!-- {% for group in request.user.groups.all %}
+    {% if group.name == 'user' %} -->
+        {% for app in task %}
+        <div class="container" id="container1">
+            <h2>{{app.appname}}</h2>
+                <p>{{app.points}}</p>
+                <a href="{% url 'upload_image' app.id %}">view in details</a>
+        </div>
+        {% endfor %}
+    <!-- {% endif %} -->
+<!-- {% endfor %} -->
+
+{% endblock content%}

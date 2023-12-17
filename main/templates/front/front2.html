@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Three Inner Divs</title>
+    <style>
+        .main-outer-div {
+            display: flex;
+            flex-direction: column;
+            /* margin: 10px; */
+             /* Outer margin for all sides */
+        }
+
+        .admin-facing-text {
+            text-align: left;
+            margin-left: 10px;
+            margin-bottom: 1px; 
+            /* Margin below the text */
+        }
+
+        .inner-div {
+            background-color: #f59274; 
+            /* LightSkyBlue color for the inner divs */
+            margin: 0 10px; /* Equal left and right margins */
+            height: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .inner-div:nth-child(2) {
+            /* div A */
+            background-color: rgb(127, 255, 202);
+            /* Styles for the B div with text */
+        }
+
+        .inner-div:nth-child(3) {
+            /* div B */
+            background-color: skyblue;
+            /* margin-bottom: 10px;  */
+            /* Margin at the bottom for C div */
+        }
+
+        .inner-div:nth-child(4) {
+            /* div C */
+            background-color: rgb(245, 155, 133);
+            /* margin-top: 10px;  */
+            /* Margin at the top for A div */
+        }
+
+
+        .hello-admin-text {
+            color: #333; /* Dark gray color for the text */
+            font-size: 16px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Main outer div -->
+<div class="main-outer-div">
+    <!-- Admin facing text -->
+    <p class="admin-facing-text">Admin facing</p>
+
+    <!-- Inner div A -->
+    <div class="inner-div">A</div>
+
+    <!-- Inner div B -->
+    <div class="inner-div">
+        <p class="hello-admin-text">Hello Admin</p>
+    </div>
+
+    <!-- Inner div C -->
+    <div class="inner-div">C</div>
+</div>
+
+</body>
+</html>

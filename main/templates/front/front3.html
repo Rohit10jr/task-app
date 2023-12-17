@@ -1,0 +1,98 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Styled Divs</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            height: 100vh; /* Set body height to 100% of the viewport */
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Outer Div with Grey Color and Text "Admin Facing" */
+        .outer-div {
+            background-color: #808080; /* Grey Color */
+            color: #fff;
+            padding: 10px;
+            flex: 1; /* Take up remaining vertical space */
+        }
+
+        /* Top Div with Sky Blue Color */
+        .top-div {
+            height: 30px;
+            background-color: #87CEEB; /* Sky Blue Color */
+        }
+
+        /* Circles on Top Div */
+        .circle {
+            margin-top:30px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: #009fbb;
+            position: absolute;
+            top: 10px;
+            left: calc(50% - 20px);
+        }
+
+        .circle:nth-child(1) {
+            left: 20px;
+        }
+
+        .circle:nth-child(2) {
+            /* left: calc(50% - 5px); */
+            left: 40px;
+        }
+
+        .circle:nth-child(3) {
+            left: 60px;
+        }
+
+        /* Middle Div with White Color */
+        .middle-div {
+            /* height: calc(100vh - 40px);  */
+            /* Full screen height minus top and bottom divs */
+            height: 30px; 
+            background-color: #fff; /* White Color */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Bottom Div with Blue Color */
+        .bottom-div {
+            height: 30px;
+            background-color: #3498db; /* Blue Color */
+        }
+
+        /* Text Style for the Middle Div */
+        .welcome-text {
+            font-size: 15px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="outer-div">
+        admin Facing
+        <!-- Top Div with Circles -->
+        <div class="top-div">
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+        </div>
+    
+        <!-- Middle Div -->
+        <div class="middle-div">
+            <div class="welcome-text">Welcome Admin</div>
+        </div>
+    
+        <!-- Bottom Div -->
+        <div class="bottom-div"></div>
+    </div>
+</body>
+</html>

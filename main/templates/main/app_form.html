@@ -1,0 +1,34 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block content %}
+<form action="" method="post" autocomplete="off" enctype="multipart/form-data">
+    <div>
+    {% csrf_token %}
+    {{ form|crispy }}
+    </div>
+    <div class="row">
+        <div class="col-md-8">
+            <button type="submit">Submit</button>
+        </div>
+        <div class="col-md-4">
+            <a href="{% url 'app_list' %}">Back to list</a>
+    </div>
+</form>
+
+<script>
+    // Dropzone configuration
+    Dropzone.options.myDropzone = {
+        paramName: "appicon",  // The name that will be used to transfer the file
+        maxFilesize: 2,        // MB
+        acceptedFiles: "image/*",  // Specify the accepted file types
+        addRemoveLinks: true,   // Show remove links on preview images
+        dictDefaultMessage: "Drop your files here or click to upload",
+        init: function () {
+            this.on("complete", function (file) {
+                // Handle completion (optional)
+            });
+        }
+    };
+</script>
+{% endblock content %}

@@ -1,0 +1,38 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block content%}
+
+{% for group in request.user.groups.all %}
+    {% if group.name == 'admin' %}
+        {% for app in context %}
+        <div class="container" id="container1">
+            <img class="listimage" src="{{ app.appicon.url }}" alt="{{ app.appname }} Image">
+            <h2>{{app.appname}}</h2>
+                <p>{{app.points}}</p>
+                <a href="{% url 'upload_image' app.id %}">view in details</a>
+            <div>
+                <a href="{% url 'app_update' app.id %}">edit</a>
+                <form action="{% url 'app_delete' app.id %}">
+                    <button type="submit">delete</button>
+                </form>
+            </div>
+        </div>
+        {% endfor %}
+
+    {% else %}
+    {% for app in context %}
+        <div class="container" id="container1">
+            <div class="container1">
+                <h2>{{app.appname}}</h2>
+                <p>{{app.points}}</p>
+                <a href="{% url 'upload_image' app.id %}">view in details</a>
+            </div>
+        </div>
+        {% endfor %}
+    {% endif %}
+{% endfor %}
+
+{% endblock content%}
+
+        
+    

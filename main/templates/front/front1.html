@@ -1,0 +1,296 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Styled Anchor Tags</title>
+    <style>
+        /* Common button styles */
+        .buttons {
+            display: inline-block;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-weight: bold;
+            cursor: pointer;
+            /* border-radius: 5px; */
+            text-align: center;
+        }
+
+        /* Styles for the "Upload" button */
+        .upload-buttons {
+            background-color: #8dd7cf;
+            color:#293845;
+            border: 2px solid #23b1a3;
+        }
+
+        /* Styles for the "Submit" button */
+        .submit-buttons {
+            background-color: #f3c19d;
+            color:#293845;
+            border: 2px solid #ec975b;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-weight: bold;
+            cursor: pointer;
+            /* border-radius: 5px; */
+            text-align: center;
+            border: 2px solid #6558f5;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        /* Home button styles */
+        .home-button {
+            background-color: #fff;
+            color: #6558f5;
+        }
+
+        .home-button:hover,
+        .home-button:active {
+            background-color: #6558f5;
+            color: #fff;
+            border: 2px solid #6558f5;
+        }
+
+        /* App button styles */
+        .app-button {
+            background-color: #6558f5;
+            color: #fff;
+        }
+
+        .app-button:hover,
+        .app-button:active {
+            background-color: #fff;
+            color: #6558f5;
+        }
+
+        .horizontal-div {
+            margin-top: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+
+        .left-content {
+            text-align: left;
+        }
+
+        .right-content {
+            text-align: right;
+        }
+
+        .horizontal-circles {
+            margin-top: 10px;
+            padding:10px;
+            border: 2px solid #58f5ce;
+            display: flex;
+        }
+
+        .circle {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: #3498db; /* You can change the background color */
+            margin-right: 20px;
+        }
+
+        .main-div {
+            margin-top: 10px;
+            background-color: grey;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .above-div {
+            background-color: skyblue;
+            width: 100%;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .text-section {
+            text-align: left;
+        }
+
+        .points-section {
+            text-align: right;
+        }
+
+        .below-div {
+            margin-top: 10px;
+            background-color: rgb(255, 179, 79);
+            width: 100%;
+            height:40vh;
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* background-color: skyblue;
+            width: 100%;
+            padding: 10px; */
+
+            /* display: flex;
+            justify-content: space-between;
+            align-items: center;
+            
+            background-color: rgb(242, 253, 137);
+            width: 100%;
+            padding: 20px;
+            margin-top: 20px;
+            margin-right: 20px;
+            margin-left: 20px; */
+        }
+
+        .large-image-input {
+            background-color: #f79090;
+            width: 100%;
+            max-width: 300px; /* Adjust max-width as needed */
+            height: 100px;
+
+            /* width: 100%;
+            height: 100px;
+            align-items: center;
+            display: flex; 
+            justify-content: space-between; */
+        }
+
+        .outer-div {
+            height: 50%; /* Full viewport height */
+            width: 60%;
+            margin-top: 10px;
+            border: 2px solid #7acf7a;
+            background-color: #f0f0f0; /* Off-white background color */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .inner-div {
+            background-color: #fff; /* White background color */
+            padding: 20px;
+            text-align: center;
+        }
+
+        .image-input {
+            width: 100%;
+            max-width: 300px; /* Adjust max-width as needed */
+            height: 100px;
+            margin: 0 auto; /* Center horizontally */
+        }
+        .upload-text{
+            display: flex; 
+            justify-content: center;
+            align-items: center;
+        }
+
+        .outer-divs {
+            margin-top: 10px;
+            border: 3px solid #eefc31;
+            background-color: #87CEEB; /* LightSkyBlue color for the outer div */
+            height: 60vh;
+            width:80vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .inner-divs {
+            background-color: #ADD8E6; /* LightBlue color for the inner div */
+            padding: 20px;
+            text-align: center;
+        }
+
+        .image-inputs {
+            width: 100%;
+            max-width: 300px; /* Adjust max-width as needed */
+            height: 100px;
+            margin: 0 auto 10px; /* Center horizontally and add margin at the bottom */
+        }
+
+        .upload-texts {
+            color: #333; /* Dark gray color for the text */
+        }
+    </style>
+</head>
+<body>
+
+<!-- Upload button -->
+<a href="#" class="buttons upload-buttons">Upload</a>
+
+<!-- Submit button -->
+<a href="#" class="buttons submit-buttons">Submit</a>
+<!-- Home button -->
+<a href="#" class="button home-button">Home</a>
+
+<!-- App button -->
+<a href="#" class="button app-button">App</a>
+
+<div class="horizontal-div">
+    <div class="left-content">
+        <p>Facebook</p>
+        <p>facebook.com</p>
+    </div>
+    <div class="right-content">
+        <p>Points = 100</p>
+    </div>
+</div>
+
+<div class="horizontal-circles">
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+</div>
+
+<div class="main-div">
+    <!-- Above div -->
+    <div class="above-div">
+        <div class="text-section">
+            <p>Chess</p>
+            <p>chess.com</p>
+        </div>
+        <div class="points-section">
+            <p>Points = 100</p>
+        </div>
+    </div>
+
+    <!-- Below div -->
+    <div class="below-div">
+        <!-- Large image input field -->
+        <div>
+        <input type="file" class="large-image-input" accept="image/*">
+        </div>
+        <div class="upload-text"><h3>upload images</h3></div>
+    
+    </div>
+</div>
+
+<div class="outer-div">
+    <!-- Inner div -->
+    <div class="inner-div">
+        <!-- Image input field -->
+        <input type="file" class="image-input" accept="image/*">
+    </div>
+</div>
+
+<div class="outer-divs">
+    <!-- Inner div -->
+    <div class="inner-divs">
+        <!-- Image input field -->
+        <input type="file" class="image-inputs" accept="image/*">
+        <!-- Upload text -->
+        <p class="upload-texts">Upload your images here</p>
+    </div>
+</div>
+
+</body>
+</html>
