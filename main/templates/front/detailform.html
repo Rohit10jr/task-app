@@ -1,0 +1,158 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+   
+.content {
+
+    flex: 1;
+    flex-direction: column;
+    /* flex-wrap: wrap; */
+    display: flex;
+    /* overflow-y: auto; */
+    /* height:80vh; */
+    /* height:85vh; */
+    /* background-color: white; */
+
+    flex: 1;
+    padding: 30px;
+    padding-right: 15px;
+    padding-left: 15px;
+    border: 3px solid #c3cfd9; 
+    overflow-y: auto;
+    /* Enable vertical scroll for the content div */
+}
+
+.container {
+    display: flex;
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: #dfe6ed;
+    /* border: 3px solid #9eadba; */
+    /* border-radius: 5px; */
+}
+
+.containeraa {
+    display: flex;
+    flex-direction: column;
+
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: #dfe6ed;
+    border: 3px solid #9eadba;
+    border-radius: 5px;
+}
+
+.postform{
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+.imagelist{
+    /* padding: 20px; */
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.listimage{
+    padding-right: 30px;
+    width:100px;
+    height:100px;
+}
+
+
+.container1{
+    display: flex;
+    /* align-items: center; */
+    /* padding-left: 30px;
+    padding-right: 30px; */
+    /* justify-content: space-around;  */
+}
+
+.left-content {
+    margin-top: 20px;
+    width: 400px;
+    text-align: left;
+    /* text-align:center; */
+}
+
+/* .left-content a */
+.container1-name{
+    /* margin-bottom: 20px; */
+    /* padding-bottom:10px; */
+    font-size: 35px;
+    font-family: sans-serif;
+    font-weight: bold;
+    color:#293845;
+    /* margin-bottom: 10px; */
+}
+
+.conatiner1-link{
+    font-family: sans-serif;
+    color: #6d61f5;
+}
+.form-list{
+    margin-top: 10px;
+}
+
+.right-content {
+    margin-top: 40px;
+    width: 400px;
+    /* width: 20%; */
+    align-items:center;
+    text-align: right;
+}
+
+.postimage{
+    padding-right: 30px;
+    width:100px;
+    height:100px;
+}
+
+    </style>
+</head>
+<body>
+    <div class="content">
+
+    <div class="containeraa">
+
+        <div class="container" >
+            <!-- <div> -->
+                <div class="imagelist">
+                    <img class="listimage" style=" margin-left: 20px;" src="{{ app.appicon.url }}" alt="{{ app.appname }} Image">
+                </div>
+                <div class="container1">
+                    <div class="left-content">
+                        <!-- <p>{{app.appname}}</p> -->
+                        <a class="container1-name">{{app.appname}}</a><br>
+                        <a class="conatiner1-link" href="{% url 'upload_image' app.id %}">{{app.link}}</a>
+                    </div>
+                    
+                    <div class="right-content">
+                        <a class="container1-point">{{app.points}} points</a>
+                    </div>
+                </div>
+            <!-- </div> -->
+        </div>
+    
+        <div class="postform">
+            <div>
+                <form method="post" enctype="multipart/form-data">
+                    <!-- {% csrf_token %}
+                    {{ form|crispy }} -->
+                    <button type="submit">Upload</button>
+                </form> 
+            </div>
+            <div class="upload-text"><h3>upload images</h3></div>
+        </div>  
+        
+        </div>
+    </div>
+</body>
+</html>

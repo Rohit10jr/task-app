@@ -1,0 +1,174 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: rgba(240, 244, 247, 255);
+    /* overflow: hidden; */
+    /* display: flex; */
+}
+
+.admin-facing-text{
+    /* text-align: left; */
+    margin-left: 10px;
+    margin-bottom: 1px; 
+}
+
+.centered-div {
+    margin: 15px 10px;
+    border-radius: 50px; 
+    height: 91vh;
+    background-color: white;
+    
+
+}
+.first {
+    position: relative;
+    width: 100%;
+    height: 25px;
+    border-radius: 5px 5px 0px 0px; 
+    background-color: #9eadba;
+}
+
+.first::before,
+.first::after {
+    content: "";
+    position: absolute;
+    top: 5px;
+    width: 15px;
+    height: 15px;
+    background-color: #8f9eac;
+    border-radius: 50%;
+}
+
+.first::before {
+    left: 5px;
+}
+
+.first::after {
+    left: 25px; /* Adjust the distance between circles */
+}
+
+.second{
+    width: 100%;
+    height: 40px;
+    background-color: white ;
+}
+
+.second-text{
+    text-align:center;
+}
+.third{
+    width: 100%;
+    height: 50px;
+    background-color: #dfe6ed ;
+}
+.main-container{
+    display: flex;
+    width: 100%;
+    height:88%;
+    background-color: #dfe6ed ;
+    border-radius: 0px 0px 5px 5px; 
+    /* height: 90%; */
+}
+
+.navbar{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 220px;
+    background-color:  #dfe6ed;
+    /* height: 87%; */
+    /* padding-top: 20px; */
+    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+    /* color: #fff; */
+    
+}
+
+
+ .navbar a {
+    width:50%;
+    height: 5%;
+    text-align: center;
+    vertical-align: text-bottom;
+    margin-bottom: 15px;
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: white;
+    color: #6558f5;
+    border: 1px solid #6558f5; 
+    text-decoration: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.navbar-link a.active {
+    background-color: #6558f5;
+    color: white;
+}
+
+.navbar-link:hover {
+    background-color: #6558f5;
+    color: white;
+}
+
+.content-wrapper {
+    flex: 1;
+    flex-wrap: wrap;
+    display: flex;
+    overflow-y: auto;
+    height:80vh;
+    /* overflow-y: scroll; */
+    /* overflow: hidden; */
+    background-color: white;
+    /* display: flex;  */
+    /* Hide overflow to prevent body scroll */
+}
+
+.content {
+    flex: 1;
+    padding: 30px;
+    padding-right: 15px;
+    padding-left: 15px;
+    overflow-y: auto;
+    border: 3px solid #c3cfd9; /* Enable vertical scroll for the content div */
+}
+
+/* Container Styles */
+.container {
+    display: flex;
+    margin-bottom: 30px;
+    background-color: #dfe6ed;
+    border: 3px solid #9eadba;
+    border-radius: 5px;
+}
+
+.imagelist{
+    padding: 20px;
+}
+.listimage{
+    /* padding-right: 20px; */
+    width:100px;
+    height:100px;
+}
+
+.container1{
+    /* padding-left: 30px;
+    padding-right: 30px; */
+    display: flex;
+    /* justify-content: space-around;  */
+    align-items: center;
+}
+
+.left-content {
+    text-align: left;
+    /* text-align:center; */
+}
+
+.right-content {
+    text-align: right;
+    text-align:center;
+}
+
+.postimage{
+    width:20px;
+    height:20px;
+}

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Custom Logo Image Input</title>
+  <style>
+    #logo-container {
+      position: relative;
+      display: inline-block;
+      cursor: pointer;
+    }
+
+    #logo {
+      max-width: 100px; /* Set the maximum width for your logo */
+      max-height: 100px; /* Set the maximum height for your logo */
+      /* Add any other styling you want for your logo */
+    }
+
+    #file-input {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<form>
+  <div id="logo-container">
+    <img id="logo" src="/media/icon/map.png" alt="Logo">
+    <input type="file" id="file-input" name="image" accept="image/*" onchange="displayImage()">
+  </div>
+  <br>
+  <label for="char-input1">Character Input 1:</label>
+  <input type="text" id="char-input1" name="charInput1"><br>
+
+  <label for="char-input2">Character Input 2:</label>
+  <input type="text" id="char-input2" name="charInput2"><br>
+
+  <label for="char-input3">Character Input 3:</label>
+  <input type="text" id="char-input3" name="charInput3"><br>
+
+  <label for="char-input4">Character Input 4:</label>
+  <input type="text" id="char-input4" name="charInput4"><br>
+
+  <label for="int-input">Integer Input:</label>
+  <input type="number" id="int-input" name="intInput"><br>
+
+  <input type="submit" value="Submit">
+</form>
+
+<script>
+  function displayImage() {
+    var fileInput = document.getElementById('file-input');
+    var logo = document.getElementById('logo');
+
+    // Check if a file is selected
+    if (fileInput.files.length > 0) {
+      var file = fileInput.files[0];
+      var reader = new FileReader();
+
+      reader.onload = function(e) {
+        // Update the src attribute of the logo with the selected image
+        logo.src = e.target.result;
+      };
+
+      // Read the selected file as a data URL
+      reader.readAsDataURL(file);
+    }
+  }
+</script>
+
+</body>
+</html>

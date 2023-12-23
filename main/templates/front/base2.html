@@ -6,75 +6,107 @@
     <title>Styled HTML Page</title>
     <style>
         body {
-            margin: 0;
-            padding: 0;
+           
+            /* background-color: rgb(137, 175, 153);  */
             background-color: rgba(240, 244, 247, 255);
-            overflow: hidden;
+            overflow: hidden; 
             /* display: flex; */
         }
-
+        
         .centered-div {
-            margin: 15px 10px;
-            border-radius: 50px; 
-            height: 91vh;
+            /* margin: 20px 5px 20px 5px; */
+            /* border-radius: 50px;  */
+            height: 98vh;
+            /* background-color: rgb(226, 149, 149); */
             background-color: rgba(240, 244, 247, 255);
+            display: flex;
+            flex-direction: column;
             
     
         }
-        .first {
-            position: relative;
-            width: 100%;
-            height: 25px;
-            border-radius: 5px 5px 0px 0px; 
-            background-color: #9eadba;
+
+        .admin-facing-text {
+            text-align: left;
+            margin:0px;
+            /* margin-left: 5px; */
+            font-size: 13px;
+            /* height:10px; */
+            /* margin-top: 0px;
+            margin-left: 0px;
+            margin-bottom: 0px;  */
+            /* Margin below the text */
         }
 
-        .first::before,
-        .first::after {
-            content: "";
+        .inner-div {
+            /* background-color: #f59274;  */
+            /* LightSkyBlue color for the inner divs */
+            /* margin: 0 10px;  */
+            /* Equal left and right margins */
+            /* height: 100px; */
+            display: flex;
+            /* justify-content: center; */
+            align-items: center;
+        }
+
+        .inner-div:nth-child(2){
+            /* position: relative; */
+            /* width: 100%; */
+            height: 30px; 
+            border-radius: 5px 5px 0px 0px; 
+            background-color: #9eadba;
+            /* margin-top: 10px; */
+            /* padding:10px; */
+            /* border: 2px solid #58f5ce; */
+            display: flex
+        }
+
+        .circle {
+            /* content: "";
             position: absolute;
             top: 5px;
             width: 15px;
             height: 15px;
             background-color: #8f9eac;
+            border-radius: 50%; */
+
+            /* position: absolute; */
+            width: 17px;
+            height: 17px;
             border-radius: 50%;
+            background-color: #8f9eac; 
+            border-radius: 50%;
+
+            /* You can change the background color */
+            margin-left: 8px;
+            
         }
 
-        .first::before {
-            left: 5px;
-        }
-
-        .first::after {
-            left: 25px; /* Adjust the distance between circles */
-        }
-        
-        /* .second::before {
-            margin-top:16px;
-            left: 55px;  */
-            /* Adjust the distance between circles */
-        /* } */
-
-        .second{
-            width: 100%;
+        .inner-div:nth-child(3){
+            /* width: 100%; */
+            justify-content: center;
             height: 40px;
             background-color: white ;
         }
-        .third{
-            width: 100%;
-            height: 50px;
-            background-color: #dfe6ed ;
+        .inner-div:nth-child(4){
+            /* width: 100%; */
+            height: 50px; 
+            background-color: #64a9ee ;
         }
-        
+
+
         .main-container{
+            /* margin-top: 10px; */
             display: flex;
             width: 100%;
-            height:88%;
+            height:80%;
             background-color: #dfe6ed ;
             border-radius: 0px 0px 5px 5px; 
-            /* height: 90%; */
+            /* height: 82%; */
+            height: 91vh;
         }
         
         .navbar{
+            padding-top: 50px;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -109,12 +141,19 @@
             color: white;
         }
 
+        /* .outer-wrapper{
+            display: flex;
+            flex-direction: column;
+        } */
         .content-wrapper {
+            
             flex: 1;
+            flex-direction: column;
             flex-wrap: wrap;
             display: flex;
             overflow-y: auto;
-            height:80vh;
+            height:85vh;
+
             /* overflow-y: scroll; */
             /* overflow: hidden; */
             background-color: white;
@@ -122,7 +161,21 @@
             /* Hide overflow to prevent body scroll */
         }
 
+        .content-above{
+            /* flex: 1; */
+            height: 50px;
+            background-color: #dfe6ed;
+
+            display: flex;
+            /* justify-content: center; */
+            align-items: center;
+            /* padding: 30px;
+            padding-right: 15px;
+            padding-left: 15px; */
+        }
+
         .content {
+
             flex: 1;
             padding: 30px;
             padding-right: 15px;
@@ -139,59 +192,98 @@
             border: 3px solid #9eadba;
             border-radius: 5px;
         }
-    </style>
-</head>
+
+         </style>
+    </head>
 <body>
-    <!-- <div> -->
-        <!-- admin facing -->
     <div class="centered-div">
+        <!-- Admin facing text -->
         <p class="admin-facing-text">Admin facing</p>
-        <div class="first">
-
+        
+        <!-- Inner div A -->
+        <div class="inner-div">
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
         </div>
-        <div class="second">
+    
+        <!-- Inner div B -->
+        <div class="inner-div">
+            <p class="hello-admin-text">Hello Admin</p>
         </div>
-        <div class="third">
-        </div>
-
+    
+        <!-- Inner div C -->
+        <!-- <div class="inner-div">C</div> -->
 
         <div class="main-container">
+            <!-- <div class="above-nav">
+                hello
+            </div> -->
             <div class="navbar">
+                <div class="above-nav"></div>
                 <a href="#" class="navbar-link">Button 1</a>
                 <a href="#" class="navbar-link">Button 2</a>
                 <a href="#" class="navbar-link">Button 3</a>
                 <a href="#" class="navbar-link">Button 4</a>
                 <a href="#" class="navbar-link">Button 5</a>
             </div>
+           
             <div class="content-wrapper">
+                <div class="content-above"> a </div>
                 <div class="content">
-                    <!-- Container 1 -->
+    
                     <div class="container" id="container1">
                         <h2>Container 1</h2>
                         <p>Content for Container 1 goes here.</p>
                     </div>
-        
-                    <!-- Container 2 -->
+                    
                     <div class="container" id="container2">
                         <h2>Container 2</h2>
                         <p>Content for Container 2 goes here.</p>
                     </div>
-        
-                    <!-- Container 3 -->
-                    <!-- <div class="container" id="container3">
+                    
+                    <div class="container" id="container3">
                         <h2>Container 3</h2>
                         <p>Content for Container 3 goes here.</p>
                     </div>
                     
-                    <div
-                    class="container" id="container4">
+                    <div class="container" id="container4">
                         <h2>Container 4</h2>
                         <p>Content for Container 4 goes here.</p>
-                    </div> -->
-                </div>
+                    </div>
+                    
+                    </div>
             </div>
         </div>
-    </div>
-<!-- </div> -->
+        </div>
+
+    </div>  
+
 </body>
 </html>
+
+        
+
+<!-- <div class="content">
+    
+<div class="container" id="container1">
+    <h2>Container 1</h2>
+    <p>Content for Container 1 goes here.</p>
+</div>
+
+<div class="container" id="container2">
+    <h2>Container 2</h2>
+    <p>Content for Container 2 goes here.</p>
+</div>
+
+<div class="container" id="container3">
+    <h2>Container 3</h2>
+    <p>Content for Container 3 goes here.</p>
+</div>
+
+<div class="container" id="container4">
+    <h2>Container 4</h2>
+    <p>Content for Container 4 goes here.</p>
+</div>
+
+</div> -->

@@ -3,38 +3,56 @@
 {% load crispy_forms_tags %}
 {% block content %}
 
-<div class="container">
-    
-    <div>
-        <img class="postimage" src="{{ app.appicon.url }}" alt="{{ app.appname }} Image">
-        <h2>{{app.appname}}</h2>
-        <h2>{{app.link}}</h2>
-        <h2>{{app.points}}</h2>
+<div class="content-above"> <a href="{% url 'app_list' %}"> {{app.appname}}</a> </div>
+<div class="content-post">
+
+<div class="containeroutpost" >
+    <div class="containerpost">
+
+        <div class="imagelist">
+            <img class="listimage" style=" margin-left: 20px;" src="{{ app.appicon.url }}" alt="{{ app.appname }} Image">
+        </div>
+        <div class="post-container1">
+            <div class="left-post-content">
+                 <!-- <p>{{app.appname}}</p> -->
+                 <a class="container1-name">{{app.appname}}</a><br>
+                 <a class="conatiner1-link" href="{% url 'upload_image' app.id %}">{{app.link}}</a>
+            </div>
+            
+            <div class="right-post-content">
+                <a class="container1-point">{{app.points}} points</a>
+            </div>
+        </div>
     </div>
 
-    <form method="post" enctype="multipart/form-data">
-        {% csrf_token %}
-        {{ form|crispy }}
-        <button type="submit">Upload</button>
-        <div class="col-md-4">
-            <a href="{% url 'app_list' %}">Back to list</a>
-        </div>
-    </form>
     
-        
-    <!-- <form action="" method="post" enctype="multipart/form-data" >
-        <div>
-            {% csrf_token %}
-            {{ form.image|as_crispy_field }}
+    <div class="postform">
+        <div class="post-imageinput">
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ form|crispy }}
+                <button type="submit">Upload</button>
+            </form> 
         </div>
-        <div class="row">
-            <div class="col-md-8">
-                <button type="submit">Submit</button>
-            </div>
-            <div class="col-md-4">
-                <a href="{% url 'app_list' %}">Back to list</a>
-        </div>
-    </form> -->
+        <div class="upload-text"><h3>upload images</h3></div>
+    </div>    
+</div>
 </div>
 
 {% endblock content%}
+
+
+<!-- <div class="container">
+    <div class="imagelist">
+        <img class="postimage" src="{{ app.appicon.url }}" alt="{{ app.appname }} Image">
+    </div>
+    <div class="container1">
+        <div class="left-content">
+            <a class="container1-name">{{app.appname}}</a><br>
+            <a class="conatiner1-link" href="{% url 'upload_image' app.id %}">{{app.link}}</a>
+        </div>
+        <div class="right-content">
+            <a class="container1-point">{{app.points}} points</a>
+        </div>
+    </div>
+</div> -->

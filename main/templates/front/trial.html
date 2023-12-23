@@ -1,0 +1,103 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Styled Anchor Tags</title>
+    <style>
+       
+        .main-div {
+            margin-top: 10px;
+            background-color: grey;
+            /* padding: 20px; */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .above-div {
+            background-color:  grey;
+            width: 100%;
+            /* padding: 10px; */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .text-section {
+            padding-left: 25px;
+            text-align: left;
+        }
+
+        .points-section {
+            padding-right: 25px;
+            text-align: right;
+        }
+
+        .below-div {
+            /* margin-top: 10px; */
+            /* margin-left: 10px; */
+            /* margin-right: 10px; */
+            margin-bottom: 30px;
+            background-color: rgb(255, 255, 255);
+            width: 95%;
+            height:40vh;
+            /* padding: 10px; */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .large-image-input {
+            margin-top: 40px;
+            background-color: #c9c9c9;
+            width: 100%;
+            max-width: 300px; /* Adjust max-width as needed */
+            height: 100px;
+
+        }
+
+        .upload-text {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: #000000; 
+        }
+    
+       
+    </style>
+</head>
+<body>
+
+
+
+
+<div class="main-div">
+    <!-- Above div -->
+    <div class="above-div">
+        <div class="text-section">
+            <p>Chess</p>
+            <p>chess.com</p>
+        </div>
+        <div class="points-section">
+            <p>Points = 100</p>
+        </div>
+    </div>
+
+    <!-- Below div -->
+    <div class="below-div">
+        <!-- Large image input field -->
+        <div class="image-input">
+        <input type="file" class="large-image-input" accept="image/*">
+        </div>
+        <div class="upload-text"><h3>upload images</h3></div>
+    
+    </div>
+</div>
+
+
+
+
+
+</body>
+</html>

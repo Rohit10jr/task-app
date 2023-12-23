@@ -4,8 +4,6 @@
 
 <!-- {% for group in request.user.groups.all %}
     {% if group.name == 'user' %} -->
-<div class="content-above">  </div>
-    <div class="content">
         {% for app in task %}
         <div class="container" id="container1">
             <h2>{{app.appname}}</h2>
@@ -13,7 +11,6 @@
                 <a href="{% url 'upload_image' app.id %}">view in details</a>
         </div>
         {% endfor %}
-    </div>
     <!-- {% endif %} -->
 <!-- {% endfor %} -->
 

@@ -3,8 +3,6 @@
 {% block content%}
 
 {% for group in request.user.groups.all %}
-<div class="content-above">  </div>
-<div class="content">
     {% if group.name == 'admin' %}
         {% for app in context %}
         <div class="container" id="container">
@@ -13,17 +11,16 @@
             </div>
             <div class="container1">
                 <div class="left-content">
-                    <!-- <p>{{app.appname}}</p> -->
-                    <a class="container1-name">{{app.appname}}</a>
+                    <p>{{app.appname}}</p>
                     
-                    <form class="form-list" action="{% url 'app_delete' app.id %}">
-                        <a href="{% url 'app_update' app.id %}">edit</a>
+                    <a href="{% url 'app_update' app.id %}">edit</a>
+                    <form action="{% url 'app_delete' app.id %}">
                         <button type="submit">delete</button>
                     </form>
                         <!-- <a href="{% url 'upload_image' app.id %}">view in details</a> -->
                 </div>
                 <div class="right-content">
-                    <a class="container1-point">{{app.points}} points</a>
+                    <p>{{app.points}}</p>
                 </div>
             </div>
         </div>
@@ -37,13 +34,11 @@
             </div>
             <div class="container1">
                 <div class="left-content">
-                     <!-- <p>{{app.appname}}</p> -->
-                     <a class="container1-name">{{app.appname}}</a><br>
-                    <a class="conatiner1-link" href="{% url 'upload_image' app.id %}">View in Detail</a>
+                    <p>{{app.appname}}</p>
+                    <a href="{% url 'upload_image' app.id %}">view in details</a>
                 </div>
-                
                 <div class="right-content">
-                    <a class="container1-point">{{app.points}} points</a>
+                    <p>{{app.points}}</p>
                 </div>
             </div>
                 <!-- <h2>{{app.appname}}</h2>
@@ -51,8 +46,7 @@
                 <a href="{% url 'upload_image' app.id %}">view in details</a> -->
         </div>
         {% endfor %}
-        {% endif %}
-    </div>
+    {% endif %}
 {% endfor %}
 
 {% endblock content%}

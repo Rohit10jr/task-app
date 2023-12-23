@@ -1,0 +1,9 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block content %}
+<h2>uploaded images</h2>
+{% for image in images %}
+    <img src="{{ image.image.url }}" alt="uploaded image">
+{% endfor %}
+{% endblock content %}
