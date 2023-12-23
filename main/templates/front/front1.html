@@ -218,10 +218,53 @@
         .upload-texts {
             color: #333; /* Dark gray color for the text */
         }
+
+        input.custom-input {
+            width: 200px;
+            padding: 10px;
+            margin: 10px;
+            font-size: 16px;
+            border: 2px solid #9eadba;
+            border-radius: 5px;
+            color: #293845;
+            transition: border-color 0.3s, color 0.3s;
+        }
+
+        input.custom-input::placeholder {
+            color: #293845;
+            transition: color 0.3s;
+        }
+
+        input.custom-input:focus {
+            outline: none;
+            border-color: #6558f5;
+        }
+
+        input.custom-input:focus::placeholder {
+            color: #dfe6ed;
+        }
+
+        button.custom-button {
+            background-color: #f3c19d;
+            color: #293845;
+            border: 2px solid #ec975b;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+        }
+
+        button.custom-button:hover {
+            background-color: #ec975b;
+            color: #fff;
+        }
     </style>
 </head>
 <body>
-
+    <button type="submit" class="custom-button">Submit</button>
+    <label for="customInput">Enter Text:</label>
+    <input type="text" id="customInput" class="custom-input" placeholder="Your Placeholder Text">
+    <br>
 <!-- Upload button -->
 <a href="#" class="buttons upload-buttons">Upload</a>
 

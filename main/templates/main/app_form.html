@@ -2,19 +2,60 @@
 {% load static %}
 {% load crispy_forms_tags %}
 {% block content %}
-<form action="" method="post" autocomplete="off" enctype="multipart/form-data">
-    <div>
-    {% csrf_token %}
-    {{ form|crispy }}
-    </div>
-    <div class="row">
-        <div class="col-md-8">
-            <button type="submit">Submit</button>
+
+<div class="content-above">  </div>
+<div class="content">
+    <div class="content-form-div">
+    <form action="" method="post" autocomplete="off" enctype="multipart/form-data">
+        <div>
+        {% csrf_token %}
+        <div class="appicon-div">
+
+            <!-- <div class="appicon-div2">
+                <img id="logo" src="{% if form.appicon.value %}{{ form.appicon.value.url }}{% else %}/media/photo.png.jpg{% endif %}" alt="Logo">
+                <input type="file" id="file-input" name="image" accept="image/*" onchange="displayImage()">
+                </div> -->
+
+                <div class="appicon-div2">
+                <img id="logo" src="{% if form.appicon.value %}{{ form.appicon.value.url }}{% else %}/media/photo.png{% endif %}" alt="appicon">
+                <!-- <input type="file" id="id_appicon" name="appicon" accept="image/*" style="display: none;" onchange="displayImage()"> -->
+                <input type="file" id="id_appicon" name="appicon" accept="image/*" onchange="displayImage()">
+                </div>
+
+            <!-- <div class="logo-container" onclick="activateFileInput()">
+                <img id="logo-preview" src="{% if form.appicon.value %}{{ form.appicon.value.url }}{% else %}/media/photo.png.jpg{% endif %}" alt="appicon Preview">
+                <input type="file" id="id_logo" name="logo" accept="image/*" style="display: none;" onchange="displayLogo()">
+              </div> -->
+
+            <!-- {{ form.appicon|as_crispy_field }}
+            <div id="appicon-preview">
+                <img id="preview-appicon" src="{% if form.appicon.value %}{{ form.appicon.value.url }}{% else %}/media/default_image.jpg{% endif %}" alt="Preview">
+              </div> -->
         </div>
-        <div class="col-md-4">
-            <a href="{% url 'app_list' %}">Back to list</a>
-    </div>
-</form>
+        <div class="appname-div">
+            {{ form.appname|as_crispy_field }}
+            {{ form.link|as_crispy_field }}
+        </div>
+        <div class="category-div">
+            {{ form.category|as_crispy_field }}
+            {{ form.subcategory|as_crispy_field }}
+        </div>
+        <div class="points-div">
+            {{ form.points|as_crispy_field }}
+        </div>
+        </div>
+        <div class="submit-div">
+            <!-- <div class="submitform-button"> -->
+                <!-- <button type="submit">Submit</button> -->
+
+                <button type="submit" class="submitform-button">Submit</button>
+            <!-- </div> -->
+            <!-- <div class="col-md-4"> -->
+                <!-- <a href="{% url 'app_list' %}">Back to list</a> -->
+        </div>
+    </form>
+</div>
+</div>
 
 <script>
     // Dropzone configuration
@@ -30,5 +71,54 @@
             });
         }
     };
+
+    // function displayImage(){
+    //     var fileInput = document.getElementById('id_appicon')
+    //     var preivewImage = document
+    // }
+
+    function displayImage() {
+    var fileInput = document.getElementById('id_appicon');
+    var logo = document.getElementById('logo');
+
+    // Check if a file is selected
+    if (fileInput.files.length > 0) {
+      var file = fileInput.files[0];
+      var reader = new FileReader();
+
+      reader.onload = function(e) {
+        // Update the src attribute of the logo with the selected image
+        logo.src = e.target.result;
+      };
+
+      // Read the selected file as a data URL
+      reader.readAsDataURL(file);
+    }
+  }
+
+//     function activateFileInput() {
+//     document.getElementById('id_logo').click();
+//   }
+
+//   function displayLogo() {
+//     var fileInput = document.getElementById('id_logo');
+//     var logoPreview = document.getElementById('logo-preview');
+
+//     // Check if a file is selected
+//     if (fileInput.files.length > 0) {
+//       var file = fileInput.files[0];
+//       var reader = new FileReader();
+
+//       reader.onload = function(e) {
+//         // Update the src attribute of the logo preview with the selected image
+//         logoPreview.src = e.target.result;
+//       };
+
+//       // Read the selected file as a data URL
+//       reader.readAsDataURL(file);
+//     }
+//   }
+
+    
 </script>
 {% endblock content %}

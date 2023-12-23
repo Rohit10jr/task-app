@@ -276,6 +276,126 @@ body {
     align-items: center; */
 }
 
+.content-form-div{
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+}
+
+.appicon-div{
+    /* position: relative; */
+    display: inline-block;
+    cursor: pointer;
+    margin: 0 10px; 
+    background-color: #ffffff; 
+    margin-top: 20px; 
+    margin-bottom: 40px; 
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.appicon-div2{
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+
+    background-color: #ffffff; 
+    /* margin: 0 10px;  */
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#logo {
+    max-width: 100px; /* Set the maximum width for your logo */
+    max-height: 100px; /* Set the maximum height for your logo */
+    /* Add any other styling you want for your logo */
+  }
+
+#file-input {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+opacity: 0;
+cursor: pointer;
+}
+
+#id_appicon{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.appname-div{
+    /* background-color: #ffffff;  */
+    background-color: #f59274; 
+    /* LightSkyBlue color for the inner divs */
+    margin: 0 10px; /* Equal left and right margins */
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.category-div{
+    /* background-color: #ffffff;  */
+    background-color: #74d0f5; 
+    /* LightSkyBlue color for the inner divs */
+    margin: 0 10px; /* Equal left and right margins */
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.points-div{
+    background-color: #695683; 
+    /* background-color: #a8f574;  */
+    /* LightSkyBlue color for the inner divs */
+    margin: 0 10px; 
+    /* Equal left and right margins */
+    height: 70px;
+    /* padding-top: 30px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.submit-div{
+    /* background-color: #ffffff;  */
+    background-color: #a8f574; 
+    /* background-color: #f57474;  */
+    /* LightSkyBlue color for the inner divs */
+    margin: 0 10px; 
+    /* Equal left and right margins */
+    height: 50px;
+    /* padding-bottom: 30px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* .appicon-field{}
+.appname-field{}
+.link-field{}
+.catg-field{}
+.subcatg-field{}
+.points-field{}
+.points-field{}
+.submitform-button{}
+ */
+
+
+
 /* .postcontainer{
         
 }
@@ -287,3 +407,94 @@ body {
 .postform{
 
 } */
+
+.appname-field,
+.link-field,
+.catg-field,
+.subcatg-field {
+    width: 200px;
+    padding: 10px;
+    margin: 10px;
+    font-size: 16px;
+    border: 2px solid #9eadba;
+    border-radius: 5px;
+    color: #293845;
+    transition: border-color 0.3s, colinks;
+}
+
+
+.appname-field,
+.link-field, 
+.catg-field, 
+.subcatg-field {
+    color: #293845;
+    transition: color 0.3s;
+}
+
+.appname-field:focus, 
+.link-field:focus, 
+.catg-field:focus, 
+.subcatg-field:focus {
+    outline: none;
+    border-color: #6558f5;
+}
+
+.appname-field:focus::placeholder, 
+.link-field:focus::placeholder, 
+.catg-field:focus::placeholder, 
+.subcatg-field:focus::placeholder {
+    color: #dfe6ed;
+}
+
+.appname-field:hover, 
+.link-field:hover, 
+.catg-field:hover, 
+.subcatg-field:hover{
+    outline: none;
+    border-color: #6558f5;
+}
+
+.appname-field:hover::placeholder, 
+.link-field:hover::placeholder, 
+.catg-field:hover::placeholder, 
+.subcatg-field:hover::placeholder{
+    color: #dfe6ed;
+}
+
+
+/* .link-field{
+    
+} */
+
+.points-field{
+    display: inline-block;
+    padding: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+    /* border-radius: 5px; */
+    text-align: center;
+    /* transition: background-color 0.3s, color 0.3s; */
+
+    background-color: #8dd7cf;
+    color:#293845;
+    border: 2px solid #23b1a3;
+}
+
+.submitform-button{
+    background-color: #f3c19d;
+    color: #293845;
+    border: 2px solid #ec975b;
+    padding: 10px 20px;
+    /* font-size: 16px; */
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+.custom-button:hover {
+    background-color: #ec975b;
+    color: #fff;
+}
+
+
