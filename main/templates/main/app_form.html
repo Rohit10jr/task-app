@@ -6,15 +6,10 @@
 <div class="content-above">  </div>
 <div class="content">
     <div class="content-form-div">
-    <form action="" method="post" autocomplete="off" enctype="multipart/form-data">
+    <form action="" method="post" autocomplete="off" enctype="multipart/form-data"  id="AdminForm">
         <div>
         {% csrf_token %}
         <div class="appicon-div">
-
-            <!-- <div class="appicon-div2">
-                <img id="logo" src="{% if form.appicon.value %}{{ form.appicon.value.url }}{% else %}/media/photo.png.jpg{% endif %}" alt="Logo">
-                <input type="file" id="file-input" name="image" accept="image/*" onchange="displayImage()">
-                </div> -->
 
                 <div class="appicon-div2">
                 <img id="logo" src="{% if form.appicon.value %}{{ form.appicon.value.url }}{% else %}/media/photo.png{% endif %}" alt="appicon">
@@ -22,15 +17,6 @@
                 <input type="file" id="id_appicon" name="appicon" accept="image/*" onchange="displayImage()">
                 </div>
 
-            <!-- <div class="logo-container" onclick="activateFileInput()">
-                <img id="logo-preview" src="{% if form.appicon.value %}{{ form.appicon.value.url }}{% else %}/media/photo.png.jpg{% endif %}" alt="appicon Preview">
-                <input type="file" id="id_logo" name="logo" accept="image/*" style="display: none;" onchange="displayLogo()">
-              </div> -->
-
-            <!-- {{ form.appicon|as_crispy_field }}
-            <div id="appicon-preview">
-                <img id="preview-appicon" src="{% if form.appicon.value %}{{ form.appicon.value.url }}{% else %}/media/default_image.jpg{% endif %}" alt="Preview">
-              </div> -->
         </div>
         <div class="appname-div">
             {{ form.appname|as_crispy_field }}
@@ -48,7 +34,7 @@
             <!-- <div class="submitform-button"> -->
                 <!-- <button type="submit">Submit</button> -->
 
-                <button type="submit" class="submitform-button">Submit</button>
+                <button type="submit" class="submitform-button" id="submitform-button">Submit</button>
             <!-- </div> -->
             <!-- <div class="col-md-4"> -->
                 <!-- <a href="{% url 'app_list' %}">Back to list</a> -->
@@ -58,6 +44,34 @@
 </div>
 
 <script>
+
+    document.addEventListener('DOMContentLoaded', function() {
+        // Function to check if both text and number fields are filled
+        function checkFields() {
+            // var iconField = $('.appicon-field')[0].files.length > 0;
+            var nameField = $('.appname-field').val().trim() !== '';
+            var linkField = $('.link-field').val().trim() !== '';
+            var catgField = $('.catg-field').val().trim() !== '';
+            var subcatgField = $('.subcatg-field').val().trim() !== '';
+            var pointsField = $('.points-field').val().trim() !== '';
+
+            // Toggle display of submit button based on input status
+            // $('.submitform-button').toggle(iconField && nameField && linkField && catgField && subcatgField && pointsField);
+            $('.submitform-button').toggle(nameField && linkField && catgField && subcatgField && pointsField);
+        }
+
+        // Trigger checkFields on input change
+        // $('.appicon-field, .appname-field, .link-field, .catg-field, .subcatg-field, .points-field').on('input', function() 
+        $('.appname-field, .link-field, .catg-field, .subcatg-field, .points-field').on('input', function() 
+        {
+            checkFields();
+        });
+
+        // Initial check on page load
+        checkFields();
+    });
+
+
     // Dropzone configuration
     Dropzone.options.myDropzone = {
         paramName: "appicon",  // The name that will be used to transfer the file
@@ -94,31 +108,45 @@
       // Read the selected file as a data URL
       reader.readAsDataURL(file);
     }
-  }
-
-//     function activateFileInput() {
-//     document.getElementById('id_logo').click();
-//   }
-
-//   function displayLogo() {
-//     var fileInput = document.getElementById('id_logo');
-//     var logoPreview = document.getElementById('logo-preview');
-
-//     // Check if a file is selected
-//     if (fileInput.files.length > 0) {
-//       var file = fileInput.files[0];
-//       var reader = new FileReader();
-
-//       reader.onload = function(e) {
-//         // Update the src attribute of the logo preview with the selected image
-//         logoPreview.src = e.target.result;
-//       };
-
-//       // Read the selected file as a data URL
-//       reader.readAsDataURL(file);
-//     }
-//   }
+    }
 
     
 </script>
 {% endblock content %}
+
+
+<!-- // hidden submit button 
+$(document).ready(function() {
+    // Function to check if all fields are filled
+    function checkFields() {
+        var imageInput = $('.appicon-field')[0].files.length > 0;
+        var charInput1 = $('.appname-field').val().trim() !== '';
+        var charInput2 = $('.link-field').val().trim() !== '';
+        var charInput3 = $('.catg-field').val().trim() !== '';
+        var charInput4 = $('.subcatg-field').val().trim() !== '';
+        var charInput5 = $('.points-field').val().trim() !== '';
+
+         // Log the values for debugging
+        console.log('Image Input:', imageInput);
+        console.log('Char Input 1:', charInput1);
+        console.log('Char Input 2:', charInput2);
+        console.log('Char Input 3:', charInput3);
+        console.log('Char Input 4:', charInput4);
+        console.log('Char Input 5:', charInput5);
+
+        // Show/hide submit button based on input status
+        if(imageInput && charInput1 && charInput2 && charInput3 && charInput4 && charInput5) {
+            $('.submitform-button').show();
+        } else {
+            $('.submitform-button').hide();
+        }
+    }
+
+    // Trigger checkFields on input change
+    $('.appicon-field, .appname-field, .link-field, .catg-field, .subcatg-field, .points-field').on('change keyup', function() {
+        checkFields();
+    });
+
+    // Initial check on page load
+    checkFields();
+}); -->

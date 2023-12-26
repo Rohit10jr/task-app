@@ -2,6 +2,7 @@ from django import forms
 from .models import App, UploadedImage, CustomUser
 # from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
+from crispy_forms.helper import FormHelper
 
 class AppForm(forms.ModelForm):
     
@@ -11,10 +12,12 @@ class AppForm(forms.ModelForm):
 
         def __init__(self, *args, **kwargs):
             super(AppForm, self).__init__(*args, **kwargs)
+            self.helper = FormHelper()
+            self.helper.form_show_labels = False
 
             defualt_image_path = '/media/photo.png'
             self.fields['appicon'].widget.attrs['placeholder'] = defualt_image_path
-            self.fields['appicon'].widget.attrs['classs']= 'appicon-field'
+            self.fields['appicon'].widget.attrs['class']= 'appicon-field'
             self.fields['appname'].widget.attrs.update({'placeholder': 'Apps Name', 'class':'appname-field'})
             self.fields['link'].widget.attrs.update({'placeholder':'App Link','class':'link-field'})
             self.fields['category'].widget.attrs.update({'placeholder':'App Category', 'class': 'catg-field'})

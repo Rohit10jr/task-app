@@ -14,9 +14,17 @@ body {
 .admin-facing-text {
     text-align: left;
     margin:0px;
-    font-size: 13px;
+    font-size: 12px;
+    font-family: sans-serif;
+    font-weight: bold;
+    color: #9eadba;
 }
 
+.hello-admin-text{
+    font-family: sans-serif;
+    font-weight: bold;
+    color: #293845;
+}
 .inner-div {
     display: flex;
     align-items: center;
@@ -205,7 +213,7 @@ body {
     font-size: 20px;
     font-family: sans-serif;
     font-weight: bold;
-
+    width:130px;
     display: inline-block;
     padding: 10px 25px;
     text-decoration: none;
@@ -289,7 +297,7 @@ body {
     margin: 0 10px; 
     background-color: #ffffff; 
     margin-top: 20px; 
-    margin-bottom: 40px; 
+    margin-bottom: 30px; 
     height: 100px;
     display: flex;
     justify-content: center;
@@ -336,10 +344,10 @@ cursor: pointer;
 }
 
 .appname-div{
-    /* background-color: #ffffff;  */
-    background-color: #f59274; 
-    /* LightSkyBlue color for the inner divs */
-    margin: 0 10px; /* Equal left and right margins */
+    background-color: #ffffff; 
+    /* background-color: #f59274;  */
+    margin: 0 10px; 
+    /* Equal left and right margins */
     height: 70px;
     display: flex;
     justify-content: center;
@@ -347,10 +355,10 @@ cursor: pointer;
 }
 
 .category-div{
-    /* background-color: #ffffff;  */
-    background-color: #74d0f5; 
-    /* LightSkyBlue color for the inner divs */
-    margin: 0 10px; /* Equal left and right margins */
+    background-color: #ffffff; 
+    /* background-color: #74d0f5;  */
+    margin: 0 10px; 
+    /* Equal left and right margins */
     height: 70px;
     display: flex;
     justify-content: center;
@@ -358,9 +366,8 @@ cursor: pointer;
 }
 
 .points-div{
-    background-color: #695683; 
-    /* background-color: #a8f574;  */
-    /* LightSkyBlue color for the inner divs */
+    /* background-color: #695683;  */
+    background-color: #ffffff; 
     margin: 0 10px; 
     /* Equal left and right margins */
     height: 70px;
@@ -371,10 +378,8 @@ cursor: pointer;
 }
 
 .submit-div{
-    /* background-color: #ffffff;  */
-    background-color: #a8f574; 
-    /* background-color: #f57474;  */
-    /* LightSkyBlue color for the inner divs */
+    background-color: #ffffff; 
+    /* background-color: #a8f574;  */
     margin: 0 10px; 
     /* Equal left and right margins */
     height: 50px;
@@ -461,15 +466,29 @@ cursor: pointer;
     color: #dfe6ed;
 }
 
+.appname-field{
+    margin-right: 35px;
+}
+.link-field{
+    margin-left:35px
+}
 
-/* .link-field{
-    
-} */
+.catg-field{
+    margin-right: 35px;
+}
 
+.subcatg-field{
+    margin-left: 35px;
+}   
+
+.points-field::placeholder {
+    color:#293845;
+}
 .points-field{
     display: inline-block;
     padding: 10px;
     text-decoration: none;
+    font-family: sans-serif;
     font-weight: bold;
     cursor: pointer;
     /* border-radius: 5px; */
@@ -482,14 +501,18 @@ cursor: pointer;
 }
 
 .submitform-button{
+    display: none;
+    padding: 10px 75px;
+    cursor: pointer;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+
     background-color: #f3c19d;
     color: #293845;
     border: 2px solid #ec975b;
-    padding: 10px 20px;
     /* font-size: 16px; */
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+    /* transition: background-color 0.3s, color 0.3s, border-color 0.3s; */
 }
 
 .custom-button:hover {
