@@ -2,18 +2,44 @@
 {% load static %}
 {% block content%}
 
-<!-- {% for group in request.user.groups.all %}
-    {% if group.name == 'user' %} -->
-        <!-- {% for app in task %} -->
 
-        <div class="container" id="container1">
-            <!-- <h2>{{.appname}}</h2> -->
-                <p>{{app.points}}</p>
-                <a href="{% url 'upload_image' app.id %}">view in details</a>
+<div class="content-above"> </div>
+<div class="content-post">
+
+<div class="containeroutpost" >
+    <div class="trophy">
+        <img class="pointimg" src="/media/1st-prize.png" alt="gold">
+        <img class="pointimg" src="/media/silver-cup.png" alt="silver">
+        <img class="pointimg" src="/media/bronze-cup.png" alt="bronze">
+    </div>
+    <div class="pointleague">
+        <div class="titlediv">
+            <div class="pointtitle">Your Points </div>
+            <div class="leaguetitle">Your League</div>
+            
         </div>
-        
-        <!-- {% endfor %} -->
-    <!-- {% endif %} -->
-<!-- {% endfor %} -->
+        <div class="scoreandimg">
+        <div class="userpoints">{{context.point}}</div>
+        <div class="userleague">
+            {% if context.points > 100 %}
+            <img class="leagueimg" src="/media/1st-prize.png" alt="">
+            {% elif context.points > 50%}
+            <img class="leagueimg" src="/media/silver-cup.png" alt="">
+            {% else %}
+            <img class="leagueimg" src="/media/bronze-cup.png" alt="">
+            {% endif %}
+        </div>
+        </div>
+    </div>
+    <div class="trophydetail">
+        <!-- <p>Note*</p> -->
+        <p>*</p>
+        <br>
+        Complete more tasks and gain points to reach gold league 
+    </div>
+    
+   
+</div>
+</div>
 
 {% endblock content%}

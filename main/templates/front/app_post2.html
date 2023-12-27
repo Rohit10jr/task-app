@@ -1,0 +1,128 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+<div class="content-above"> <a href="{% url 'app_list' %}"> {{app.appname}}</a> </div>
+<div class="content-post">
+
+<div class="containeroutpost" >
+    <div class="containerpost">
+
+        <div class="imagelist">
+            <img class="listimage" style=" margin-left: 20px;" src="{{ app.appicon.url }}" alt="{{ app.appname }} Image">
+        </div>
+        <div class="post-container1">
+            <div class="left-post-content">
+                 <!-- <p>{{app.appname}}</p> -->
+                 <a class="container1-name">{{app.appname}}</a><br>
+                 <a class="conatiner1-link" href="{% url 'upload_image' app.id %}">{{app.link}}</a>
+            </div>
+            
+            <div class="right-post-content">
+                <a class="container1-point">{{app.points}} points</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="postform">
+
+        <div class="post-imageinput">
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="appicon-div2">
+                    <img id="logo" src="/media/photo.png" alt="appicon">
+                    <input type="file" id="id_appicon" name="appicon" accept="image/*" onchange="displayImage()">
+                </div>
+            </div>
+            <div>
+                <button type="submit" class="uploadform-button" id="uploadform-button">Submit</button>
+            </div>
+        </form> 
+        
+        <div class="upload-text">upload screenshots to complete TASK</div>
+
+    </div>    
+</div>
+</div>
+<script>
+
+document.addEventListener('DOMContentLoaded', function() {
+        // Function to check if both text and number fields are filled
+        function checkFields() {
+            // var iconField = $('.appicon-field')[0].files.length > 0;
+            var imageField = $('.uploadimage-field')[0].files.length > 0;
+
+            $('.uploadform-button').toggle(nameField && linkField && catgField && subcatgField && pointsField);
+        }
+
+        $('.appname-field,').on('input', function() {
+        
+            checkFields();
+        });
+        // Initial check on page load
+        checkFields();
+    });
+
+     // Dropzone configuration
+     Dropzone.options.myDropzone = {
+        paramName: "appicon",  // The name that will be used to transfer the file
+        maxFilesize: 2,        // MB
+        acceptedFiles: "image/*",  // Specify the accepted file types
+        addRemoveLinks: true,   // Show remove links on preview images
+        dictDefaultMessage: "Drop your files here or click to upload",
+        init: function () {
+            this.on("complete", function (file) {
+                // Handle completion (optional)
+            });
+        }
+    };
+
+    function displayImage() {
+    var fileInput = document.getElementById('id_appicon');
+    var logo = document.getElementById('logo');
+
+    // Check if a file is selected
+    if (fileInput.files.length > 0) {
+      var file = fileInput.files[0];
+      var reader = new FileReader();
+
+      reader.onload = function(e) {
+        // Update the src attribute of the logo with the selected image
+        logo.src = e.target.result;
+      };
+
+      // Read the selected file as a data URL
+      reader.readAsDataURL(file);
+    }
+    }
+
+</script>
+{% endblock content%}
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="container">
+    <div class="imagelist">
+        <img class="postimage" src="{{ app.appicon.url }}" alt="{{ app.appname }} Image">
+    </div>
+    <div class="container1">
+        <div class="left-content">
+            <a class="container1-name">{{app.appname}}</a><br>
+            <a class="conatiner1-link" href="{% url 'upload_image' app.id %}">{{app.link}}</a>
+        </div>
+        <div class="right-content">
+            <a class="container1-point">{{app.points}} points</a>
+        </div>
+    </div>
+</div> -->

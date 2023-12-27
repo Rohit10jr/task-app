@@ -49,6 +49,7 @@
         // Function to check if both text and number fields are filled
         function checkFields() {
             // var iconField = $('.appicon-field')[0].files.length > 0;
+            // var imageField = $('.appicon-field')[0].files.length > 0;
             var nameField = $('.appname-field').val().trim() !== '';
             var linkField = $('.link-field').val().trim() !== '';
             var catgField = $('.catg-field').val().trim() !== '';
@@ -56,14 +57,16 @@
             var pointsField = $('.points-field').val().trim() !== '';
 
             // Toggle display of submit button based on input status
-            // $('.submitform-button').toggle(iconField && nameField && linkField && catgField && subcatgField && pointsField);
+    
+            // $('.submitform-button').toggle(imageField && nameField && linkField && catgField && subcatgField && pointsField);
             $('.submitform-button').toggle(nameField && linkField && catgField && subcatgField && pointsField);
         }
 
         // Trigger checkFields on input change
-        // $('.appicon-field, .appname-field, .link-field, .catg-field, .subcatg-field, .points-field').on('input', function() 
-        $('.appname-field, .link-field, .catg-field, .subcatg-field, .points-field').on('input', function() 
-        {
+        
+        // $('.appicon-field, .appname-field, .link-field, .catg-field, .subcatg-field, .points-field').on('input', function() {
+        $('.appname-field, .link-field, .catg-field, .subcatg-field, .points-field').on('input', function() {
+        
             checkFields();
         });
 

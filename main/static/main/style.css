@@ -238,8 +238,8 @@ body {
 
 .containerpost{
     display: flex;
-    margin-bottom: 20px;
-    padding: 20px;
+    /* margin-bottom: 20px; */
+    padding-bottom: 10px;
     background-color: #dfe6ed;
 }
 
@@ -269,16 +269,94 @@ body {
 }
 
 .postform{
-    height: 32vh;
+    height: 40vh;
     background-color: white;
     display: flex;
     flex-direction: column;
     align-items: center;
+    /* justify-content: center; */
 
 }
 
+.uploadform-button{
+    /* display: none; */
+    /* margin-top: 5px; */
+    padding: 5px 30px;
+    cursor: pointer;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+
+    background-color: #f3c19d;
+    color: #293845;
+    border: 2px solid #ec975b;
+}
+
+.post-upload-button{
+
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* background-color: #8dd7cf; */
+    /* flex-direction: column;
+    justify-content: center;
+    align-items: center; */
+}
+
+.upload-text{
+    /* margin-top: 40px; */
+    color: #293845;
+    /* margin-top:10px; */
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: burlywood; */
+}
+
+.postimagediv2{
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+
+    background-color: #ffffff; 
+    /* margin: 0 10px;  */
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#postlogo {
+    max-width: 100px; /* Set the maximum width for your logo */
+    max-height: 100px; /* Set the maximum height for your logo */
+ 
+  }
+
+#id_postimage{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
 .post-imageinput{
-    margin-top:40px;
+    margin-top:30px;
+    /* margin-bottom: 10px; */
+
+    /* background-color: #8f9eac; */
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     /* display: flex;
     flex-direction: column;
     align-items: center; */
@@ -520,4 +598,193 @@ cursor: pointer;
     color: #fff;
 }
 
+/*  */
+
+.prof1-div, 
+.prof2-div,
+.prof3-div{
+    background-color: #ffffff; 
+    /* background-color: #f59274;  */
+    margin: 0 10px; 
+    /* Equal left and right margins */
+    font-family: sans-serif;
+    font-weight: bold;
+    color: #293845;
+    height: 70px;
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+}
+
+.prof1-div{
+    margin-left: 180px;
+    margin-bottom: 15px;
+}
+.prof2-div {
+    margin-left: 140px;
+    margin-bottom: 15px;
+}
+.email-label{
+    text-align: right;
+    width: 80px;
+}
+.prof3-div{
+     justify-content: center;
+}
+
+
+.profsubmit{
+    /* display: none; */
+    padding: 10px 50px;
+    cursor: pointer;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+
+    background-color: #f3c19d;
+    color: #293845;
+    border: 2px solid #ec975b;
+}
+
+.userprofile,
+.emailprofile,
+.fnameprofile,
+.lnameprofile {
+    width: 200px;
+    padding: 10px;
+    margin: 10px;
+    font-size: 16px;
+    border: 2px solid #9eadba;
+    border-radius: 5px;
+    color: #293845;
+    transition: border-color 0.3s, colinks;
+}
+
+/* .pro-mail-input{
+    padding-left: 50px;
+} */
+
+/* .userprofile,
+.fnameprofile{
+    margin-right: 20px;
+} */
+
+/* .userprofile{
+    margin-right: 60px;
+}  */
+
+.userprofile:focus,
+.emailprofile:focus,
+.fnameprofile:focus,
+.lnameprofile:focus {
+    outline: none;
+    border-color: #6558f5;
+}
+
+.userprofile:hover,
+.emailprofile:hover,
+.fnameprofile:hover,
+.lnameprofile:hover {
+    outline: none;
+    border-color: #6558f5;
+}
+
+/*  */
+.trophy{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.pointimg{
+    height: 50px;
+    width:50px;
+    padding-right:20px ;
+}
+
+
+.pointleague{
+    margin-top: 10px;
+    padding:10px;
+    /* border: 2px solid #58f5ce; */
+
+    flex: 1;
+    flex-direction: column;
+    flex-wrap: wrap;
+    display: flex;
+    overflow-y: auto;
+}
+
+.titlediv{
+    padding:0px;
+    width: 100%;
+    height: 50px;
+    /* background-color: #f5c997; */
+    display: flex;
+    align-items: center;
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: large;
+    color:#293845;
+}
+
+.pointtitle{
+    padding:0px;
+    width: 50%;
+    /* background-color: #65f558; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* font-family: sans-serif;
+    font-size: medium; */
+}
+.leaguetitle{
+    padding:0px;
+    width: 50%;
+    /* background-color: #cbf558; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.scoreandimg{
+    display: flex;
+    align-items: center;
+}
+.userpoints{
+    height: 200px;
+    width: 50%;
+    /* background-color: #58f5ce; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 150px;
+    color:#293845;
+}
+
+.userleague{
+    height: 200px;
+    width: 50%;
+    /* background-color: #e1f597; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.leagueimg{
+    height: 150px;
+    width: 150px;
+}
+
+.trophydetail{
+    margin-top: 10px;
+    height: 50px;
+    display:flex;
+    /* background-color: #f5c997; */
+    font-size: large;
+    color: #293845;
+}
 

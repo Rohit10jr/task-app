@@ -9,6 +9,8 @@ from django.contrib.auth.models import User, Group
 from django.contrib.auth import login, logout, authenticate
 from django.contrib.auth.decorators import login_required, permission_required
 from django.contrib.auth.models import Group
+from django.contrib import messages
+from .forms import UserProfileForm
 # Create your views here.
  
  # rohit 1234 rohit27 124@#jr$abc%
@@ -104,21 +106,35 @@ def user_logout(request):
 
 
 def user_task(request):
-    task = App.objects.all().order_by('-id')[:3]
+    task = App.objects.all().order_by('-id')[:4]
     # task = App.objects.all().order_by('-created_at')[:3]
     context = {'task': task}
     return render(request, 'main/task.html', context)
 
-
+@login_required(login_url="/login")
 def user_profile(request):
-    if request.user.is_authenticated:
-        username = request.user.username
-        firstname = request.user.first_name
-        lastname = request.user.last_name
-        email = request.user.email
-        context = {'username': username, 'email': email, 'firstname':firstname, 'lastname':lastname, 'email': email}
-        return render(request, 'registration/profile.html', context)
+    if request.method == 'POST':
+        form  = UserProfileForm(request.POST, instance=request.user)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'profile has been updated')
+            return redirect('profile')
+    else:
+        form =UserProfileForm(instance=request.user)
+    return render(request, 'registration/profile.html', {'form':form})
+    # if request.user.is_authenticated:
+    #     context = request.user
+    #     return render(request, 'registration/profile.html', {'context':context})
+    
+        # username = request.user.username
+        # firstname = request.user.first_name
+        # lastname = request.user.last_name
+        # email = request.user.email
+        # context = {'username': username, 'email': email, 'firstname':firstname, 'lastname':lastname, 'email': email}
+        # return render(request, 'registration/profile.html', context)
 
 
 def user_points(request):
-    return
+    if request.user.is_authenticated:
+        context = request.user
+        return render(request, 'main/points.html', {'context':context})

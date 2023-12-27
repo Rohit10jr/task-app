@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Signup</title>
+    <!-- Include Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .signup-form {
+            max-width: 400px;
+            margin: auto;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 signup-form">
+            <h2 class="text-center">Sign Up</h2>
+            <form method="post" class="mt-4">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit" class="btn btn-primary btn-block">Sign Up</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Include Bootstrap JS (optional, but needed for some features) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

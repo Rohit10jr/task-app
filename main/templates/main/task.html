@@ -2,19 +2,31 @@
 {% load static %}
 {% block content%}
 
-<!-- {% for group in request.user.groups.all %}
-    {% if group.name == 'user' %} -->
+{% for group in request.user.groups.all %}
 <div class="content-above">  </div>
-    <div class="content">
+<div class="content">
+        {% if group.name == 'user' %}
         {% for app in task %}
-        <div class="container" id="container1">
-            <h2>{{app.appname}}</h2>
-                <p>{{app.points}}</p>
-                <a href="{% url 'upload_image' app.id %}">view in details</a>
+        <div class="container" id="container">
+            <div class="imagelist">
+                <img class="listimage" src="{{ app.appicon.url }}" alt="{{ app.appname }} Image">
+            </div>
+            <div class="container1">
+                <div class="left-content">
+                     <!-- <p>{{app.appname}}</p> -->
+                     <a class="container1-name">{{app.appname}}</a>
+                     <br>
+                    <a class="conatiner1-link" href="{% url 'upload_image' app.id %}">View in Detail</a>
+                </div>
+                
+                <div class="right-content">
+                    <a class="container1-point">{{app.points}} points</a>
+                </div>
+            </div>
         </div>
         {% endfor %}
+        {% endif %}
     </div>
-    <!-- {% endif %} -->
-<!-- {% endfor %} -->
+{% endfor %}
 
 {% endblock content%}
