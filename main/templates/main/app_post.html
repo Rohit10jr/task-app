@@ -27,32 +27,79 @@
 
     
     <div class="postform">
+
         <div class="post-imageinput">
             <form method="post" enctype="multipart/form-data">
                 {% csrf_token %}
-                {{ form|crispy }}
-                <button type="submit">Upload</button>
-            </form> 
+
+                <div class="postimagediv2">
+                    <img id="postlogo" src="/media/photo.png" alt="appicon">
+                    <input type="file" id="id_image" name="posticon" accept="image/*" onchange="displayImage()">
+                </div>
+
         </div>
-        <div class="upload-text"><h3>upload images</h3></div>
+
+        <div>
+            <button type="submit" class="uploadform-button" id="uploadform-button">Submit</button>
+        </div>
+    </form> 
+
+        <div class="upload-text">upload screenshots to complete TASK</div>
+
     </div>    
 </div>
 </div>
+<script>
 
+document.addEventListener('DOMContentLoaded', function() {
+        // Function to check if both text and number fields are filled
+        function checkFields() {
+            var imageField = $('#id_image')[0].files.length > 0;
+            $('.uploadform-button').toggle(imageField);
+        }
+
+        $('#id_image').on('input', function() {
+            checkFields();
+        });
+
+        // Initial check on page load
+        checkFields();
+    });
+
+
+
+    function displayImage() {
+    var fileInput = document.getElementById('id_image');
+    var logo = document.getElementById('postlogo');
+
+    // Check if a file is selected
+    if (fileInput.files.length > 0) {
+      var file = fileInput.files[0];
+      var reader = new FileReader();
+
+      reader.onload = function(e) {
+        // Update the src attribute of the logo with the selected image
+        logo.src = e.target.result;
+      };
+
+      // Read the selected file as a data URL
+      reader.readAsDataURL(file);
+    }
+    }
+
+     // Dropzone configuration
+     Dropzone.options.myDropzone = {
+        paramName: "posticon",  // The name that will be used to transfer the file
+        maxFilesize: 2,        // MB
+        acceptedFiles: "image/*",  // Specify the accepted file types
+        addRemoveLinks: true,   // Show remove links on preview images
+        dictDefaultMessage: "Drop your files here or click to upload",
+        init: function () {
+            this.on("complete", function (file) {
+                // Handle completion (optional)
+            });
+        }
+    };
+</script>
 {% endblock content%}
 
-
-<!-- <div class="container">
-    <div class="imagelist">
-        <img class="postimage" src="{{ app.appicon.url }}" alt="{{ app.appname }} Image">
-    </div>
-    <div class="container1">
-        <div class="left-content">
-            <a class="container1-name">{{app.appname}}</a><br>
-            <a class="conatiner1-link" href="{% url 'upload_image' app.id %}">{{app.link}}</a>
-        </div>
-        <div class="right-content">
-            <a class="container1-point">{{app.points}} points</a>
-        </div>
-    </div>
-</div> -->

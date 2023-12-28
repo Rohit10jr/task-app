@@ -279,7 +279,7 @@ body {
 }
 
 .uploadform-button{
-    /* display: none; */
+    display: none;
     /* margin-top: 5px; */
     padding: 5px 30px;
     cursor: pointer;
@@ -339,7 +339,7 @@ body {
  
   }
 
-#id_postimage{
+#id_image{
     position: absolute;
     top: 0;
     left: 0;
