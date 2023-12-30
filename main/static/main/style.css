@@ -93,16 +93,33 @@ body {
     cursor: pointer;
 }
 
-.navbar-link a.active {
+.navbar-link.active {
     background-color: #6558f5;
     color: white;
 }
 
 .navbar-link:hover {
     background-color: #6558f5;
-    color: white;
+    /* color: white; */
 }
 
+.navbar-link img {
+    background-color: #6558f5;
+    /* filter: brightness(0) invert(1);  */
+    /* Adjust the filter for the desired effect */
+}
+.navbar-link:hover img {
+    background-color: #6558f5;
+    /* color: white; */
+    /* filter: brightness(0) invert(1);  */
+    /* Adjust the filter for the desired effect */
+}
+.navbar-link:active img {
+    background-color: #ffffff;
+    /* color: white; */
+    /* filter: brightness(0) invert(1);  */
+    /* Adjust the filter for the desired effect */
+}
 .content-wrapper {
     flex: 1;
     flex-direction: column;
@@ -766,7 +783,7 @@ cursor: pointer;
 }
 
 .userleague{
-    height: 200px;
+    height: 260px;
     width: 50%;
     /* background-color: #e1f597; */
     display: flex;
@@ -781,7 +798,7 @@ cursor: pointer;
 
 .trophydetail{
     margin-top: 10px;
-    height: 50px;
+    height: 60px;
     display:flex;
     /* background-color: #f5c997; */
     font-size: large;

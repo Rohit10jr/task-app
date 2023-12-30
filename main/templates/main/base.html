@@ -40,9 +40,9 @@
 
     <div class="main-container">
         <div class="navbar">
-            <a href="/app/" class="navbar-link active">home</a>
+            <a href="/app/" class="navbar-link active"><img src="/media/home.png" alt="Home" width="10px" height="10px">home</a>
             <a href="{% url 'app_insert' %}" class="navbar-link active">add apps</a>
-            <a href="/logout/" class="navbar-link active">logout</a>
+            <a href="/app/logout/" class="navbar-link active">logout</a>
             <!-- {% if user.is_authenticated %}
             <span class="navbar-text">Logged in as {{user.username}} </span>
             {% endif %} -->
@@ -67,11 +67,11 @@
 
     <div class="main-container">
         <div class="navbar">
-            <a href="/app/" class="navbar-link active">home</a>
-            <a href="/profile/" class="navbar-link active">profile</a>
-            <a href="#" class="navbar-link active">points</a>
-            <a href="/task/" class="navbar-link active">tasks</a>
-            <a href="/logout/" class="navbar-link active">logout</a>
+            <a href="/app/" class="navbar-link"><img src="/media/home.png" alt="Home" width="12px" height="12px" style="margin-right: 5px;"padding-right="5px">home</a>
+            <a href="/app/profile/" class="navbar-link">profile</a>
+            <a href="/app/points/" class="navbar-link">points</a>
+            <a href="/app/task/" class="navbar-link">tasks</a>
+            <a href="/app/logout/" class="navbar-link">logout</a>
         </div>
 {% endif %}   
         <div class="content-wrapper">
@@ -90,6 +90,25 @@
     integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
     crossorigin="anonymous"
 ></script> -->
+<script>
+    // Get the current URL path
+    var currentPath = window.location.pathname;
+
+    // Find all navbar links
+    var navbarLinks = document.querySelectorAll('.navbar-link');
+
+    // Iterate over each navbar link
+    navbarLinks.forEach(function(link) {
+        // Get the link's href attribute
+        var linkHref = link.getAttribute('href');
+
+        // Check if the current path matches the link's href
+        if (currentPath === linkHref) {
+            // Add the "active" class to the matching link
+            link.classList.add('active');
+        }
+    });
+</script>
 </body>
 </html> 
 
