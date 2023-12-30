@@ -21,9 +21,9 @@
         <div class="scoreandimg">
         <div class="userpoints">{{context.point}}</div>
         <div class="userleague">
-            {% if context.points > 100 %}
+            {% if context.point > 100 %}
             <img class="leagueimg" src="/media/1st-prize.png" alt="">
-            {% elif context.points > 50%}
+            {% elif context.point > 50 %}
             <img class="leagueimg" src="/media/silver-cup.png" alt="">
             {% else %}
             <img class="leagueimg" src="/media/bronze-cup.png" alt="">

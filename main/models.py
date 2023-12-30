@@ -18,7 +18,7 @@ class App(models.Model):
         return self.appname
     
 class UploadedImage(models.Model):
-    image = models.ImageField(upload_to='images/', default="")
+    image = models.ImageField(upload_to='images/')
     
 
 class CustomUser(AbstractUser):

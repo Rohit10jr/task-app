@@ -39,7 +39,7 @@ class AppForm(forms.ModelForm):
 class ImageForm(forms.ModelForm):
     class Meta:
         model = UploadedImage
-        fields = ('image',)
+        fields = ('__all__')
 
     
     def __init__(self, *args, **kwargs):

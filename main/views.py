@@ -71,10 +71,16 @@ def show_images(request):
 
 
 def upload_image(request, id):
+    app = App.objects.get(pk=id)
+    points_value = app.points
+    user = request.user
+    
     if request.method == 'POST':
         form = ImageForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
+            user.point = user.point + points_value
+            user.save()
             return redirect('/app')  # Redirect to a success page
     else:
         app = App.objects.get(pk=id)

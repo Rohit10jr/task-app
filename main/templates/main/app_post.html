@@ -34,7 +34,7 @@
 
                 <div class="postimagediv2">
                     <img id="postlogo" src="/media/photo.png" alt="appicon">
-                    <input type="file" id="id_image" name="posticon" accept="image/*" onchange="displayImage()">
+                    <input type="file" id="id_image" name="image" accept="image/*" onchange="displayImage()">
                 </div>
 
         </div>
@@ -89,7 +89,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
      // Dropzone configuration
      Dropzone.options.myDropzone = {
-        paramName: "posticon",  // The name that will be used to transfer the file
+        paramName: "image",  // The name that will be used to transfer the file
         maxFilesize: 2,        // MB
         acceptedFiles: "image/*",  // Specify the accepted file types
         addRemoveLinks: true,   // Show remove links on preview images
