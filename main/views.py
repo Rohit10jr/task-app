@@ -22,17 +22,15 @@ class AppDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = App.objects.all()
     serializer_class = AppSerializers
 
-
+# home page
 @login_required(login_url="/login")
 def list(request):
     context = App.objects.all()
     print(context)
     return render(request, 'main/app_list.html', {'context': context})
-    # return render(request, 'main/index.html', {'context': context})
-    # serializer = AppSerializers(app, many=True)
-    # return JsonResponse(serializer.data, safe=False)
-        
 
+
+# adding apps and editing 
 @login_required(login_url="/login")
 @permission_required("main.add_app", login_url="/login", raise_exception=True)
 def update(request, id=0):
@@ -56,6 +54,7 @@ def update(request, id=0):
         return redirect('/app')
     
 
+# app delete 
 @login_required(login_url="/login")
 @permission_required("main.delete_app", login_url="/login", raise_exception=True)
 def delete(request, id):
@@ -69,7 +68,7 @@ def show_images(request):
     images = UploadedImage.objects.all()
     return render(request, 'main/show_images.html', {'images':images})
 
-
+# for users to upload image
 def upload_image(request, id):
     app = App.objects.get(pk=id)
     points_value = app.points
@@ -88,7 +87,7 @@ def upload_image(request, id):
         print(app)
     return render(request, 'main/app_post.html', {'form': form, 'app':app})
 
-
+# sign up views 
 def sign_up(request):
     if request.method == "POST":
         form = RegisterForm(request.POST)
@@ -105,18 +104,18 @@ def sign_up(request):
         form = RegisterForm()
     return render(request,'registration/signup.html', {'form':form})
 
-
+# logout view
 def user_logout(request):
     logout(request)
     return redirect('/login')
 
-
+# user task view
 def user_task(request):
     task = App.objects.all().order_by('-id')[:4]
-    # task = App.objects.all().order_by('-created_at')[:3]
     context = {'task': task}
     return render(request, 'main/task.html', context)
 
+# user profile view
 @login_required(login_url="/login")
 def user_profile(request):
     if request.method == 'POST':
@@ -128,18 +127,8 @@ def user_profile(request):
     else:
         form =UserProfileForm(instance=request.user)
     return render(request, 'registration/profile.html', {'form':form})
-    # if request.user.is_authenticated:
-    #     context = request.user
-    #     return render(request, 'registration/profile.html', {'context':context})
     
-        # username = request.user.username
-        # firstname = request.user.first_name
-        # lastname = request.user.last_name
-        # email = request.user.email
-        # context = {'username': username, 'email': email, 'firstname':firstname, 'lastname':lastname, 'email': email}
-        # return render(request, 'registration/profile.html', context)
-
-
+# user points view 
 def user_points(request):
     if request.user.is_authenticated:
         context = request.user

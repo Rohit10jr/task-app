@@ -8,9 +8,9 @@
 
 <div class="containeroutpost" >
     <div class="trophy">
-        <img class="pointimg" src="/media/1st-prize.png" alt="gold">
-        <img class="pointimg" src="/media/silver-cup.png" alt="silver">
-        <img class="pointimg" src="/media/bronze-cup.png" alt="bronze">
+        <img class="pointimg" src="/media/default/1st-prize.png" alt="gold">
+        <img class="pointimg" src="/media/default/silver-cup.png" alt="silver">
+        <img class="pointimg" src="/media/default/bronze-cup.png" alt="bronze">
     </div>
     <div class="pointleague">
         <div class="titlediv">
@@ -22,11 +22,11 @@
         <div class="userpoints">{{context.point}}</div>
         <div class="userleague">
             {% if context.point > 600 %}
-            <img class="leagueimg" src="/media/1st-prize.png" alt="">
+            <img class="leagueimg" src="/media/default/1st-prize.png" alt="">
             {% elif context.point > 300 %}
-            <img class="leagueimg" src="/media/silver-cup.png" alt="">
+            <img class="leagueimg" src="/media/default/silver-cup.png" alt="">
             {% else %}
-            <img class="leagueimg" src="/media/bronze-cup.png" alt="">
+            <img class="leagueimg" src="/media/default/bronze-cup.png" alt="">
             {% endif %}
         </div>
         </div>

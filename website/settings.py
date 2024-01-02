@@ -139,3 +139,5 @@ LOGOUT_REDIRECT_URL = '/login/'
 AUTH_USER_MODEL = 'main.CustomUser'
 
 # REGISTRATION_DEFAULT_GROUP_NAME="user"
+
+# FORCE_SCRIPT_NAME = 'http://127.0.0.1:8000/app/'

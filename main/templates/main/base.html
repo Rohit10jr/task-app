@@ -40,9 +40,9 @@
 
     <div class="main-container">
         <div class="navbar">
-            <a href="/app/" class="navbar-link active"><img src="/media/home.png" alt="Home" width="10px" height="10px">home</a>
-            <a href="{% url 'app_insert' %}" class="navbar-link active">add apps</a>
-            <a href="/app/logout/" class="navbar-link active">logout</a>
+            <a href="/app/" class="navbar-link">Home</a>
+            <a href="{% url 'app_insert' %}" class="navbar-link">Add Apps</a>
+            <a href="/app/logout/" class="navbar-link">Logout</a>
             <!-- {% if user.is_authenticated %}
             <span class="navbar-text">Logged in as {{user.username}} </span>
             {% endif %} -->
@@ -67,11 +67,11 @@
 
     <div class="main-container">
         <div class="navbar">
-            <a href="/app/" class="navbar-link"><img src="/media/home.png" alt="Home" width="12px" height="12px" style="margin-right: 5px;"padding-right="5px">home</a>
-            <a href="/app/profile/" class="navbar-link">profile</a>
-            <a href="/app/points/" class="navbar-link">points</a>
-            <a href="/app/task/" class="navbar-link">tasks</a>
-            <a href="/app/logout/" class="navbar-link">logout</a>
+            <a href="/app/" class="navbar-link">Home</a>
+            <a href="/app/profile/" class="navbar-link">Profile</a>
+            <a href="/app/points/" class="navbar-link">Points</a>
+            <a href="/app/task/" class="navbar-link">Tasks</a>
+            <a href="/app/logout/" class="navbar-link">Logout</a>
         </div>
 {% endif %}   
         <div class="content-wrapper">

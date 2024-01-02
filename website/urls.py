@@ -19,9 +19,11 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static 
 from django.contrib.auth import views as v
+from django.shortcuts import redirect
 
 urlpatterns = [
     path('', include('django.contrib.auth.urls')),
+    path('', lambda request: redirect('/app/')),
     path('app/', include('main.urls')),
     path('admin/', admin.site.urls),
     # path('logout/',v.LogoutView.as_view(next_page='/login'),name="logout")

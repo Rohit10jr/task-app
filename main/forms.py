@@ -5,6 +5,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.forms import UserChangeForm
 from crispy_forms.helper import FormHelper
 
+# form for app model
 class AppForm(forms.ModelForm):
     
         class Meta:
@@ -25,17 +26,7 @@ class AppForm(forms.ModelForm):
             self.fields['subcategory'].widget.attrs.update({'placeholder':'Sub Category', 'class': 'subcatg-field'})
             self.fields['points'].widget.attrs.update({'placeholder':'ADD POINTS', 'class': 'points-field'})
 
-
-
-        # labels = {  
-        #         'appicon' : 'App icon',
-        #         'appname' : 'App Name',
-        #         'link' : 'App Link',
-        #         'category' : 'App Category',
-        #         'subcategory' : 'Sub Category',
-        #         'points' : 'App Points',
-        #         }
-
+# form for uploading image
 class ImageForm(forms.ModelForm):
     class Meta:
         model = UploadedImage
@@ -47,7 +38,7 @@ class ImageForm(forms.ModelForm):
 
         self.fields['image'].widget.attrs['class']= 'uploadimage-field'
 
-
+# Registration form
 class RegisterForm(UserCreationForm):
     email = forms.EmailField(required=True)
     first_name = forms.CharField(max_length=30, required=True)
@@ -69,13 +60,13 @@ class RegisterForm(UserCreationForm):
         self.fields['password1'].widget.attrs.update({'placeholder':'Password 1', 'class': 'pass1-field'})
         self.fields['password2'].widget.attrs.update({'placeholder':'Password 2', 'class': 'pass2-field'})
 
-
+# form to show point field added to users on django admin
 class CustomUserCreationForm(UserCreationForm):
     class Meta:
         model = CustomUser
         fields = '__all__'
 
-
+# form to update user information 
 class UserProfileForm(UserChangeForm):
     class Meta:
         model = CustomUser

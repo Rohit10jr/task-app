@@ -100,7 +100,7 @@ body {
 
 .navbar-link:hover {
     background-color: #6558f5;
-    /* color: white; */
+    color: white;
 }
 
 .navbar-link img {
@@ -508,11 +508,12 @@ cursor: pointer;
 
 } */
 
+
 .appname-field,
 .link-field,
 .catg-field,
 .subcatg-field {
-    width: 200px;
+    /* width: 200px; */
     padding: 10px;
     margin: 10px;
     font-size: 16px;
@@ -522,6 +523,15 @@ cursor: pointer;
     transition: border-color 0.3s, colinks;
 }
 
+.catg-field,
+.subcatg-field{
+    width: 225px;
+}
+
+.appname-field,
+.link-field{
+    width:200px;
+}
 
 .appname-field,
 .link-field, 
